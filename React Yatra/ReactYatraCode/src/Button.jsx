@@ -1,13 +1,11 @@
-import React from 'react'
-const Button = (props) => {
-    const handleClick = () => {
-        console.log('clicked');
-      }
-    console.log(props);
-  const { children } = props;
-  return (
-    <button onClick={handleClick}>{children}</button>
-  );
-}
+import React from 'react';
 
-export default Button
+const Button = (props) => {
+  console.log(props);
+  const { children, handleClick, something } = props; // Use handleClick instead of handleClickAction why?
+  return (
+    <button onClick={handleClick}>{children} + {something.a} + {something.b.c}</button>
+  );
+};
+
+export default Button;

@@ -1,19 +1,18 @@
 import React from 'react';
 import Button from './Button';
-// import Text from './Text';
 
-// console.log(Button())
-const App= () =>
-{ 
- 
+const App = () => { 
+  const handleClickAction = () => {  
+    console.log('clicked inside app component');
+  };
 
-
-return (
-  
-  <div>
-     <Button >click me</Button>
-  </div>
-)  
-}
+  return (
+    <div>
+      <Button handleClick={handleClickAction} something={{ a: 4, b: { c: 5 } }}>
+        click me
+      </Button>
+    </div>
+  );
+};
 
 export default App;
