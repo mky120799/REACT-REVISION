@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
 
 const App = () => { 
- const data = [
-  {id:'a', text:'text 1'},
-  {id:'b', text:'text 2'},
-  {id:'c', text:'text 3'},
-  {id:'d', text:'text 4'},
-  {id:'e', text:'text 5'},
-]
+  
+  const [data1, setdata1] = useState(0);
+  const [data2, setdata2] = useState(0);
 
-const handleClickAction = (e) => {
-  console.log('I was clicked from the parent');
-}
-return  
- <>
-  <Text>{data[0].text}</Text>
-  <Text>{data[1].text}</Text>
-  <Text>{data[3].text}</Text>
-  <Text>{data[4].text}</Text> 
+  useEffect(()=>{
+    console.log("Data 1 changed"); 
+  },[data1]);
+  useEffect(()=>{
+    console.log("Data 2 changed"); 
+  }
+  ,[data2]);
+
+  return <>
+  {data1}
+  <br/>
+  <button onClick = {() => setdata1((prevData )=> prevData+1)}>Update 1</button>
+  <br />
+  {data2}
+  <br/>
+  <button onClick={() => setdata2((prevData )=> prevData+1)}>Update 2</button>
+  </>
  
-</>
 
+ 
 };
 
 export default App;
