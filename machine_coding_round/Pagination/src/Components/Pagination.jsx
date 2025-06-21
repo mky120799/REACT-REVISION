@@ -13,7 +13,7 @@ function Pagination({pageNo,setPageNo}) {
     let paginationArr= [...prevThreeNoArr,...nextFourNoArr]
 
     
-    const [data,setData] = useState([])
+    
     const handleNext = () =>{
        setPageNo(pageNo + 1)
     }
