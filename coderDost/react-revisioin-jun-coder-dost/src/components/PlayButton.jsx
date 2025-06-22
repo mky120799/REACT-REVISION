@@ -1,10 +1,12 @@
 import './PlayButton.css';
 import { useState } from 'react';
+
 function PlayButton({message,children,onPlay,onPause}){
-   
-     const [playing,setPlaying] = useState(false);
+    console.log('render PlayButton')
+
+    const [playing, setPlaying] = useState(false);  
     function handleClick(e){
-        console.log(e)
+        // console.log(e)
         e.stopPropagation()
 
         if(playing) onPause()
@@ -14,7 +16,7 @@ function PlayButton({message,children,onPlay,onPause}){
     }
 
     return (
-        <button onClick={handleClick}>{children} : {playing?'>':'||'}</button>
+        <button onClick={handleClick}>{children} : {playing?'⏸️':'⏯️'}</button>
     )
 
 }
